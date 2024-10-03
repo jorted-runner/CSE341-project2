@@ -1,0 +1,30 @@
+{
+  "name": "cse341-project2",
+  "version": "1.0.0",
+  "description": "CSE341 Project 2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorted-runner/CSE341-project2.git"
+  },
+  "author": "Danny Ellis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jorted-runner/CSE341-project2/issues"
+  },
+  "homepage": "https://github.com/jorted-runner/CSE341-project2#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "mongodb": "^6.9.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
