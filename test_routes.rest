@@ -13,3 +13,15 @@ Content-Type: application/json
     "review": "One of my all time favorites. Fantastic story. One of the best Sci-Fi books out there.",
     "date_finished": "Dec 12, 2006"
 }
+
+### Add a read book with invalid input
+POST http://localhost:8080/read
+Content-Type: application/json
+
+{
+    "title": "Enders Game",
+    "author": "Orson Scott Card",
+    "rating": 10.5,
+    "review": "One of my all time favorites. Fantastic story. One of the best Sci-Fi books out there.",
+    "date_finished": "Dec 12, 2006"
+}

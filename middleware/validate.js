@@ -4,7 +4,7 @@ const saveBookRead = (req, res, next) => {
 	const validationRule = {
 		title: 'required|string',
 		author: 'required|string',
-		rating: 'required|numeric',
+		rating: 'required|numeric|max:5',
 		review: 'required|string',
 		date_finished: 'required|string',
 	};
