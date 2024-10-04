@@ -1,0 +1,15 @@
+// LOCALHOST
+### Get all read books
+GET http://localhost:8080/read
+
+### Add a read book
+POST http://localhost:8080/read
+Content-Type: application/json
+
+{
+    "Title": "Harry Potter and the Goblet of Fire",
+    "Author": "J.K. Rowling",
+    "Rating": 4,
+    "Review": "Great book! Loved all the action that took place. Harry VS Dragon was so much fun to read.",
+    "Date_Finished": "Nov 13, 2006"
+}
