@@ -82,4 +82,13 @@ async function updateReadBookByID(req, res) {
 	}
 }
 
-module.exports = { getAllReadBooks, getReadByID, addBookRead, updateReadBookByID };
+// Delete a single read book by ID
+async function deleteReadBook(req, res) {
+    const bookID = new ObjectId(req.params.id);
+    const result = await mongodb.getDatabase().db().collection('contacts').deleteOne({_id: bookID})
+    res.status(200).json('Contact Deleted')
+    
+}
+
+
+module.exports = { getAllReadBooks, getReadByID, addBookRead, updateReadBookByID, deleteReadBook };

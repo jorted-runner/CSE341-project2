@@ -5,6 +5,7 @@ const {
 	getReadByID,
 	addBookRead,
 	updateReadBookByID,
+	deleteReadBook,
 } = require('../controllers/readController');
 const validation = require('../middleware/validate')
 
@@ -24,5 +25,8 @@ router.put(
 	validation.saveBookRead,
 	updateReadBookByID
 );
+
+// Delete a Read Book by ID
+router.delete('/:id', validation.checkID, deleteReadBook)
 
 module.exports = router

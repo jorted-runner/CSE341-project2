@@ -1,5 +1,4 @@
 const validatorHelper = require('./helper');
-const mongodb = require('../database/db');
 const ObjectId = require('mongodb').ObjectId;
 
 const saveBookRead = (req, res, next) => {
@@ -10,7 +9,7 @@ const saveBookRead = (req, res, next) => {
 		review: 'required|string',
 		date_finished: 'required|string',
 	};
-	validatorHelper(req.body, validationRule, {}, (err, status) => {
+	validatorHelper.validator(req.body, validationRule, {}, (err, status) => {
 		if (!status) {
 			res.status(412).send({
 				success: false,
@@ -23,32 +22,27 @@ const saveBookRead = (req, res, next) => {
 	});
 };
 
-const checkID = (req, res, next) => {
+async function checkID(req, res, next) {
 	try {
-		const bookID = new ObjectId(req.params.id);
-		const validBook = mongodb
-				.getDatabase()
-				.db()
-				.collection('books_read')
-				.find({ _id: bookID });
-				// I need to finish this validation
-		if (validBook) {
+        const bookID = new ObjectId(req.params.id);
+        const validBook = await validatorHelper.getOneByID(bookID)
+        console.log(validBook)
+		if (validBook.length < 1) {
 			res.status(412).send({
 				success: false,
 				message: 'Validation failed',
-				data: 'Invalid ID',
+				data: 'Invalid ID - Book not found',
 			});
 		} else {
 			next();
 		}
 	} catch {
-		res.status(415).send({
+		res.status(400).send({
 			success: false,
 			message: 'Validation failed',
-			data: 'Invalid ID',
+			data: 'Invalid ID format',
 		});
 	}
-
 }
 
 module.exports = {
