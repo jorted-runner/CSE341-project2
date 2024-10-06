@@ -15,6 +15,25 @@ async function getAllReadBooks(req, res) {
     }
 }
 
+// Get read book by ID
+async function getReadByID(req, res) {
+	//#swagger.tags=['ReadBooks']
+	try {
+		const bookID = new ObjectId(req.params.id);
+		const result = await mongodb
+			.getDatabase()
+			.db()
+			.collection('books_read')
+			.find({ _id: bookID });
+		const book = await result.toArray();
+		res.setHeader('Content-Type', 'application/json');
+		res.status(200).json(book);
+	} catch (error) {
+		console.error('Error fetching books:', error);
+		res.status(500).json({ message: 'Failed to fetch books' });
+	}
+}
+
 // Add a read book
 async function addBookRead(req, res) {
 	//#swagger.tags=['ReadBooks']
@@ -40,5 +59,27 @@ async function addBookRead(req, res) {
 	}
 }
 
+// Update a single read book by ID
+async function updateReadBookByID(req, res) {
+	try {
+    	const bookID = new ObjectId(req.params.id);
+		const newBook = {
+			Title: req.body.title,
+			Author: req.body.author,
+			Date_Finished: req.body.date_finished,
+			Rating: req.body.rating,
+			Review: req.body.review,
+		};
+		const result = await mongodb
+			.getDatabase()
+			.db()
+			.collection('books_read')
+			.updateOne({ _id: bookID }, { $set: newBook });
+		res.status(200).json('Read Book Updated');
+	} catch (error) {
+		console.error('Error adding new book:', error);
+		res.status(500).json({message: 'Failed to update book.'})
+	}
+}
 
-module.exports = { getAllReadBooks, addBookRead }
+module.exports = { getAllReadBooks, getReadByID, addBookRead, updateReadBookByID };

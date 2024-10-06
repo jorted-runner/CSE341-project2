@@ -1,4 +1,6 @@
 const validatorHelper = require('./helper');
+const mongodb = require('../database/db');
+const ObjectId = require('mongodb').ObjectId;
 
 const saveBookRead = (req, res, next) => {
 	const validationRule = {
@@ -21,6 +23,35 @@ const saveBookRead = (req, res, next) => {
 	});
 };
 
+const checkID = (req, res, next) => {
+	try {
+		const bookID = new ObjectId(req.params.id);
+		const validBook = mongodb
+				.getDatabase()
+				.db()
+				.collection('books_read')
+				.find({ _id: bookID });
+				// I need to finish this validation
+		if (validBook) {
+			res.status(412).send({
+				success: false,
+				message: 'Validation failed',
+				data: 'Invalid ID',
+			});
+		} else {
+			next();
+		}
+	} catch {
+		res.status(415).send({
+			success: false,
+			message: 'Validation failed',
+			data: 'Invalid ID',
+		});
+	}
+
+}
+
 module.exports = {
 	saveBookRead,
+	checkID,
 };

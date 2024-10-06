@@ -25,3 +25,27 @@ Content-Type: application/json
     "review": "One of my all time favorites. Fantastic story. One of the best Sci-Fi books out there.",
     "date_finished": "Dec 12, 2006"
 }
+
+### Update a read book with ID
+PUT http://localhost:8080/read/67005c05f3584794af2d1c43
+Content-Type: application/json
+
+{
+    "title": "Enders Game",
+    "author": "Orson Scott Card",
+    "rating": 3.5,
+    "review": "One of my all time favorites. Fantastic story. One of the best Sci-Fi books out there.",
+    "date_finished": "Dec 12, 1111"
+}
+
+### Update a read book with invalid ID
+PUT http://localhost:8080/read/67005c05f3584794af2d1c
+Content-Type: application/json
+
+{
+    "title": "Enders Game",
+    "author": "Orson Scott Card",
+    "rating": 3.5,
+    "review": "One of my all time favorites. Fantastic story. One of the best Sci-Fi books out there.",
+    "date_finished": "Dec 12, 0000"
+}
