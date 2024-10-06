@@ -26,7 +26,6 @@ async function checkID(req, res, next) {
 	try {
         const bookID = new ObjectId(req.params.id);
         const validBook = await validatorHelper.getOneByID(bookID)
-        console.log(validBook)
 		if (validBook.length < 1) {
 			res.status(412).send({
 				success: false,

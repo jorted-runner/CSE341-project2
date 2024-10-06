@@ -61,8 +61,9 @@ async function addBookRead(req, res) {
 
 // Update a single read book by ID
 async function updateReadBookByID(req, res) {
+	//#swagger.tags=['ReadBooks']
 	try {
-    	const bookID = new ObjectId(req.params.id);
+		const bookID = new ObjectId(req.params.id);
 		const newBook = {
 			Title: req.body.title,
 			Author: req.body.author,
@@ -78,16 +79,20 @@ async function updateReadBookByID(req, res) {
 		res.status(200).json('Read Book Updated');
 	} catch (error) {
 		console.error('Error adding new book:', error);
-		res.status(500).json({message: 'Failed to update book.'})
+		res.status(500).json({ message: 'Failed to update book.' });
 	}
 }
 
 // Delete a single read book by ID
 async function deleteReadBook(req, res) {
-    const bookID = new ObjectId(req.params.id);
-    const result = await mongodb.getDatabase().db().collection('contacts').deleteOne({_id: bookID})
-    res.status(200).json('Contact Deleted')
-    
+	//#swagger.tags=['ReadBooks']
+	const bookID = new ObjectId(req.params.id);
+	const result = await mongodb
+		.getDatabase()
+		.db()
+		.collection('contacts')
+		.deleteOne({ _id: bookID });
+	res.status(200).json('Contact Deleted');
 }
 
 
