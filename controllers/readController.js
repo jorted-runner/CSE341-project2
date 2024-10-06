@@ -90,7 +90,7 @@ async function deleteReadBook(req, res) {
 	const result = await mongodb
 		.getDatabase()
 		.db()
-		.collection('project2')
+		.collection('books_read')
 		.deleteOne({ _id: bookID });
 	res.status(200).json('Read Book Removed');
 }
