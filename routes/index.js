@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const readRouter = require('./booksRead')
+const tbrRouter = require('./booksTBR')
 const swaggerRouter = require('./swagger')
 
 router.use('/', swaggerRouter)
@@ -10,5 +11,6 @@ router.get('/', (req, res) => {
 })
 
 router.use('/read', readRouter);
+router.user('/tbr', tbrRouter)
 
 module.exports = router
