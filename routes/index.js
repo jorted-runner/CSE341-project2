@@ -11,6 +11,6 @@ router.get('/', (req, res) => {
 })
 
 router.use('/read', readRouter);
-router.user('/tbr', tbrRouter)
+router.use('/tbr', tbrRouter)
 
 module.exports = router

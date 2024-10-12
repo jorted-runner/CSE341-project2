@@ -3,7 +3,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 // Get all tbr books
 async function getAllTbrBooks(req, res) {
-    //#swagger.tags=['TbrBooks']
+    //#swagger.tags=['TBRBooks']
     try {
         const result = await mongodb.getDatabase().db().collection('books_tbr').find();
         const books = await result.toArray();
@@ -17,7 +17,7 @@ async function getAllTbrBooks(req, res) {
 
 // Get tbr book by ID
 async function getTbrByID(req, res) {
-	//#swagger.tags=['TbrBooks']
+	//#swagger.tags=['TBRBooks']
 	try {
 		const bookID = new ObjectId(req.params.id);
 		const result = await mongodb
@@ -36,7 +36,7 @@ async function getTbrByID(req, res) {
 
 // Add a tbr book
 async function addBookTbr(req, res) {
-	//#swagger.tags=['TbrBooks']
+	//#swagger.tags=['TBRBooks']
 	try {
 		const newBook = {
 			Title: req.body.title,
@@ -59,7 +59,7 @@ async function addBookTbr(req, res) {
 
 // Update a single tbr book by ID
 async function updateTbrBookByID(req, res) {
-	//#swagger.tags=['TbrBooks']
+	//#swagger.tags=['TBRBooks']
 	try {
 		const bookID = new ObjectId(req.params.id);
 		const newBook = {
@@ -81,7 +81,7 @@ async function updateTbrBookByID(req, res) {
 
 // Delete a single tbr book by ID
 async function deleteTbrBook(req, res) {
-	//#swagger.tags=['TbrBooks']
+	//#swagger.tags=['TBRBooks']
 	const bookID = new ObjectId(req.params.id);
 	const result = await mongodb
 		.getDatabase()

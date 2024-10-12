@@ -7,7 +7,9 @@ const saveBookRead = (req, res, next) => {
 		author: 'required|string',
 		rating: 'required|numeric|max:5',
 		review: 'required|string',
+		date_started: 'required|string',
 		date_finished: 'required|string',
+		would_reread: 'required|bool'
 	};
 	validatorHelper.validator(req.body, validationRule, {}, (err, status) => {
 		if (!status) {

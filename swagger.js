@@ -9,7 +9,12 @@ const doc = {
 	schemes: ['https', 'http'],
 };
 
-const outputFile = './swagger.json'
-const routeFiles = ['./routes/booksRead.js', './routes/index.js', './routes/swagger.js']
+const outputFile = './swagger.json';
+const routeFiles = [
+	'./routes/booksRead.js',
+	'./routes/booksTBR.js',
+	'./routes/index.js',
+	'./routes/swagger.js',
+];
 
-swaggerAutogen(outputFile, routeFiles, doc)
+swaggerAutogen(outputFile, routeFiles, doc);

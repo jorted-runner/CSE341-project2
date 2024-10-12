@@ -11,7 +11,9 @@ Content-Type: application/json
     "author": "Orson Scott Card",
     "rating": 4.5,
     "review": "One of my all time favorites. Fantastic story. One of the best Sci-Fi books out there.",
-    "date_finished": "Dec 12, 2006"
+    "date_started": "Nov 30, 2006",
+    "date_finished": "Dec 12, 2006",
+    "would_reread": true,
 }
 
 ### Add a read book with invalid input
@@ -23,7 +25,9 @@ Content-Type: application/json
     "author": "Orson Scott Card",
     "rating": 10.5,
     "review": "One of my all time favorites. Fantastic story. One of the best Sci-Fi books out there.",
-    "date_finished": "Dec 12, 2006"
+    "date_started": "Nov 20, 2006",
+    "date_finished": "Dec 12, 2006",
+    "would_reread": true,
 }
 
 ### Update a read book with ID
@@ -35,7 +39,9 @@ Content-Type: application/json
     "author": "Orson Scott Card",
     "rating": 3.5,
     "review": "One of my all time favorites. Fantastic story. One of the best Sci-Fi books out there.",
-    "date_finished": "Dec 12, 1111"
+    "date_started": "Dec 1, 2021",
+    "date_finished": "Dec 12, 1111",
+    "would_reread": false
 }
 
 ### Update a read book with invalid ID
@@ -47,7 +53,9 @@ Content-Type: application/json
     "author": "Orson Scott Card",
     "rating": 3.5,
     "review": "One of my all time favorites. Fantastic story. One of the best Sci-Fi books out there.",
-    "date_finished": "Dec 12, 0000"
+    "date_started": "Nov 1, 2000",
+    "date_finished": "Dec 12, 0000",
+    "would_reread": true,
 }
 
 ### Update a read book with ID invalid Data
@@ -59,7 +67,9 @@ Content-Type: application/json
     "author": "Orson Scott Card",
     "rating": 10.5,
     "review": "One of my all time favorites. Fantastic story. One of the best Sci-Fi books out there.",
-    "date_finished": "Dec 12, 1111"
+    "date_started": "Nov 1, 2021",
+    "date_finished": "Dec 12, 1111",
+    "would_reread": false,
 }
 
 ### Delete a read book by ID

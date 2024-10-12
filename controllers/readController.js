@@ -41,9 +41,11 @@ async function addBookRead(req, res) {
 		const newBook = {
 			Title: req.body.title,
 			Author: req.body.author,
+			Date_Started: req.body.date_started,
 			Date_Finished: req.body.date_finished,
 			Rating: req.body.rating,
 			Review: req.body.review,
+			Would_ReRead: req.body.would_reread,
 		};
 		const result = await mongodb
 			.getDatabase()
@@ -67,9 +69,11 @@ async function updateReadBookByID(req, res) {
 		const newBook = {
 			Title: req.body.title,
 			Author: req.body.author,
+			Date_Started: req.body.date_started,
 			Date_Finished: req.body.date_finished,
 			Rating: req.body.rating,
 			Review: req.body.review,
+			Would_ReRead: req.body.would_reread,
 		};
 		const result = await mongodb
 			.getDatabase()
