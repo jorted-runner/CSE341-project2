@@ -13,7 +13,7 @@ const validation = require('../middleware/validate')
 router.get('/', getAllReadBooks)
 
 // Get Read book by ID
-router.get('/:id', getReadByID)
+router.get('/:id', validation.checkID, getReadByID);
 
 // Add a new Read Book
 router.post('/', validation.saveBookRead, addBookRead);

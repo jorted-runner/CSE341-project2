@@ -8,13 +8,25 @@ const validator = (body, rules, customMessages, callback) => {
 };
 
 async function getOneByID(ID) {
-	const validBook = await mongodb
+	const validBookFromRead = await mongodb
 		.getDatabase()
 		.db()
 		.collection('books_read')
 		.find({ _id: ID })
 		.toArray();
-    return await validBook
+
+	if (validBookFromRead.length > 0) {
+		return validBookFromRead;
+	}
+
+	const validBookFromTBR = await mongodb
+		.getDatabase()
+		.db()
+		.collection('books_tbr')
+		.find({ _id: ID })
+		.toArray();
+
+	return validBookFromTBR;
 }
 
 module.exports = {validator, getOneByID};

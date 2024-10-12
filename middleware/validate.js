@@ -22,6 +22,25 @@ const saveBookRead = (req, res, next) => {
 	});
 };
 
+const saveBookTbr = (req, res, next) => {
+	const validationRule = {
+		title: 'required|string',
+		author: 'required|string',
+		date_added: 'required|string',
+	};
+	validatorHelper.validator(req.body, validationRule, {}, (err, status) => {
+		if (!status) {
+			res.status(412).send({
+				success: false,
+				message: 'Validation failed',
+				data: err,
+			});
+		} else {
+			next();
+		}
+	});
+};
+
 async function checkID(req, res, next) {
 	try {
         const bookID = new ObjectId(req.params.id);
@@ -47,4 +66,5 @@ async function checkID(req, res, next) {
 module.exports = {
 	saveBookRead,
 	checkID,
+	saveBookTbr
 };
