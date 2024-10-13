@@ -7,12 +7,12 @@ const session = require('express-session');
 const GitHubStrategy = require('passport-github2').Strategy;
 
 const port = process.env.PORT || 8080;
-
+const cookie_secret = process.env.SESSION_SECRET
 app
 	.use(express.json())
 	.use(
 		session({
-			secret: process.env.SESSION_SECRET,
+			secret: cookie_secret,
 			resave: false,
 			saveUninitialized: true,
 		})
