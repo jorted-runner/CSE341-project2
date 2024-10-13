@@ -135,7 +135,7 @@
                   "example": "any"
                 },
                 "rating": {
-                  "example": "any"
+                  "example": 4.5
                 },
                 "review": {
                   "example": "any"
@@ -226,7 +226,7 @@
                   "example": "any"
                 },
                 "rating": {
-                  "example": "any"
+                  "example": 4.5
                 },
                 "review": {
                   "example": "any"
