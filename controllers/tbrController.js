@@ -45,7 +45,7 @@ async function addBookTbr(req, res) {
 		const newBook = {
 			Title: req.body.title,
 			Author: req.body.author,
-			Date_Added: req.body.date_finished,
+			Date_Added: req.body.date_added,
 		};
 		const result = await mongodb
 			.getDatabase()
@@ -69,7 +69,7 @@ async function updateTbrBookByID(req, res) {
 		const newBook = {
 			Title: req.body.title,
 			Author: req.body.author,
-			Date_Added: req.body.date_finished,
+			Date_Added: req.body.date_added,
 		};
 		const result = await mongodb
 			.getDatabase()

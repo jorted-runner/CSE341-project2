@@ -321,7 +321,7 @@
                 "author": {
                   "example": "any"
                 },
-                "date_finished": {
+                "date_added": {
                   "example": "any"
                 }
               }
@@ -400,7 +400,7 @@
                 "author": {
                   "example": "any"
                 },
-                "date_finished": {
+                "date_added": {
                   "example": "any"
                 }
               }
