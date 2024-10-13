@@ -9,7 +9,7 @@ const saveBookRead = (req, res, next) => {
 		review: 'required|string',
 		date_started: 'required|string',
 		date_finished: 'required|string',
-		would_reread: 'required|bool'
+		would_reread: 'required|bool',
 	};
 	validatorHelper.validator(req.body, validationRule, {}, (err, status) => {
 		if (!status) {
@@ -45,8 +45,8 @@ const saveBookTbr = (req, res, next) => {
 
 async function checkID(req, res, next) {
 	try {
-        const bookID = new ObjectId(req.params.id);
-        const validBook = await validatorHelper.getOneByID(bookID)
+		const bookID = new ObjectId(req.params.id);
+		const validBook = await validatorHelper.getOneByID(bookID);
 		if (validBook.length < 1) {
 			res.status(412).send({
 				success: false,
@@ -68,5 +68,5 @@ async function checkID(req, res, next) {
 module.exports = {
 	saveBookRead,
 	checkID,
-	saveBookTbr
+	saveBookTbr,
 };

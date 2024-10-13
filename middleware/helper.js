@@ -29,4 +29,4 @@ async function getOneByID(ID) {
 	return validBookFromTBR;
 }
 
-module.exports = {validator, getOneByID};
+module.exports = { validator, getOneByID };

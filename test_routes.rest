@@ -13,7 +13,7 @@ Content-Type: application/json
     "review": "One of my all time favorites. Fantastic story. One of the best Sci-Fi books out there.",
     "date_started": "Nov 30, 2006",
     "date_finished": "Dec 12, 2006",
-    "would_reread": true,
+    "would_reread": true
 }
 
 ### Add a read book with invalid input
@@ -27,7 +27,7 @@ Content-Type: application/json
     "review": "One of my all time favorites. Fantastic story. One of the best Sci-Fi books out there.",
     "date_started": "Nov 20, 2006",
     "date_finished": "Dec 12, 2006",
-    "would_reread": true,
+    "would_reread": true
 }
 
 ### Update a read book with ID
@@ -41,7 +41,7 @@ Content-Type: application/json
     "review": "One of my all time favorites. Fantastic story. One of the best Sci-Fi books out there.",
     "date_started": "Dec 1, 2021",
     "date_finished": "Dec 12, 1111",
-    "would_reread": false
+    "would_reread": true
 }
 
 ### Update a read book with invalid ID
@@ -55,7 +55,7 @@ Content-Type: application/json
     "review": "One of my all time favorites. Fantastic story. One of the best Sci-Fi books out there.",
     "date_started": "Nov 1, 2000",
     "date_finished": "Dec 12, 0000",
-    "would_reread": true,
+    "would_reread": true
 }
 
 ### Update a read book with ID invalid Data
@@ -69,7 +69,7 @@ Content-Type: application/json
     "review": "One of my all time favorites. Fantastic story. One of the best Sci-Fi books out there.",
     "date_started": "Nov 1, 2021",
     "date_finished": "Dec 12, 1111",
-    "would_reread": false,
+    "would_reread": true
 }
 
 ### Delete a read book by ID
