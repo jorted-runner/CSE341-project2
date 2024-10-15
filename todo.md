@@ -6,5 +6,5 @@
 - [x] Update Read Book data validation
 - [x] Add OAuth
 - [x] Update API Docs
-- [ ] Deploy to Render
-- [ ] Film YouTube video
+- [x] Deploy to Render
+- [x] Film YouTube video
